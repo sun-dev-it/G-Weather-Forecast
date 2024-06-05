@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+.header {
+    padding: 25px 0 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    background: #5372F0;
+}
+
+.content {
+    padding: 30px 50px;
+}
+
+.form-seach {
+    form {
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgb(105, 105, 105);
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            color: white;
+            background: #5372F0;
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+    .Use-current-location button {
+        width: 100%;
+        color: white;
+        background: #6C757D;
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+.weather-today {
+    color: white;
+    background: #5372F0;
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+
+.weather-future {
+    div {
+        padding: 15px;
+        .detail {
+            color: white;
+            background: #6C757D;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    }
+}
+
+.text-4-Day-Forecast {
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10px;
+}
