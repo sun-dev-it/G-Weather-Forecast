@@ -1,0 +1,51 @@
+<span class="get-more-notification" onclick ="formSubscribe()">Get daily weather forecast information? </span> |
+<span class="unsubscribe" onclick ="formUnsubscribe()">Unsubscribe?</span>
+
+<div class="weather-subscription-form">
+    <%= form_with(model: User.new, url: create_user_path, local: true, method: :post) do |form| %>
+        <%= form.email_field :email %>
+        <div class="row">
+            <div class="col-6">
+                <input type="button" value="Cancel" onclick="hideformSubscribe()" class="btn-cancel-subscribe">
+            </div>
+            <div class="col-6">
+                <%= form.submit "Subscribe", class:"btn-subscribe" %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<div class="weather-unsubscription-form">
+    <%= form_with(url: destroy_user_path, local: true, method: :delete) do |form| %>
+        <%= form.email_field :email %>
+        <div class="row">
+            <div class="col-6">
+                <input type="button" value="Cancel" onclick="hideformSubscribe()" class="btn-cancel-subscribe">
+            </div>
+            <div class="col-6">
+                <%= form.submit "Unsubscribe", class:"btn-subscribe" %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+
+
+
+<script>
+    var subscriptionForm = document.querySelector('.weather-subscription-form');
+    var unsubscriptionForm = document.querySelector('.weather-unsubscription-form');
+    function formSubscribe() {
+        subscriptionForm.style.display = 'block';
+        unsubscriptionForm.style.display = 'none';
+    }
+    function formUnsubscribe() {
+        subscriptionForm.style.display = 'none';
+        unsubscriptionForm.style.display = 'block';
+    }
+
+    function hideformSubscribe() {
+        subscriptionForm.style.display = 'none';
+        unsubscriptionForm.style.display = 'none';
+    }
+</script>

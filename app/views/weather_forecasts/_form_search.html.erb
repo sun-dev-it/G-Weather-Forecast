@@ -1,0 +1,12 @@
+<div class="form-seach">
+    <b> Enter a City Name</b>
+    <form action="<%= weather_forecasts_path %>" method="get">
+        <input type="text" id="city" name="city" placeholder="E.g., New York, London, Tokyo">
+        <button type="submit" id="searchButton">Seach</button>
+    </form>
+    <form action="<%= weather_forecasts_path %>" method="get" class="Use-current-location">
+        <button type="submit">Use Current Location</button>
+    </form>
+
+    <hr>
+</div>  

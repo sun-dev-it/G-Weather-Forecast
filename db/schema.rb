@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_04_182600) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_06_093848) do
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "weather_forecasts", force: :cascade do |t|
     t.string "city"
     t.float "temperature"

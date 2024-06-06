@@ -1,0 +1,36 @@
+<% if @weather_data %>
+    <div class="weather-today">
+    <div class="row">
+        <div class="col-7">
+        <h2><b><%= @weather_data['location']['name'] %> (<%= @weather_data['location']['localtime'] %>)</b></h2> 
+        <p>Temp: <%= @weather_data['current']['temp_c'] %>°C</p>
+        <p>Wind: <%= @weather['current']['wind_kph'] %> km/h</p>
+        <p>Humidity: <%= @weather_data['current']['humidity'] %>%</p>
+        </div>
+        <div class="col-5">
+        <center><img src="<%= @weather_data['current']['condition']['icon'] %>"></center>
+        <center><%= @weather_data['current']['condition']['text'] %></center>
+        </div>
+    </div>
+    </div>
+
+    <div class="text-4-Day-Forecast">
+    4-Day Forecast
+    </div>
+
+    <div class="row weather-future">
+    <% @weather_data['forecast']['forecastday'][1..-1].each do |day| %>
+        <div class="col-3">
+        <div class="detail">
+            <h3><%= Date.parse(day['date']).strftime('%A, %d %b') %></h3>
+            <img src="<%= day['day']['condition']['icon'] %>">
+            <p>Average Temp: <%= day['day']['avgtemp_c'] %>°C</p>
+            <p>Min Temp: <%= day['day']['mintemp_c'] %>°C</p>
+            <p>Max Temp: <%= day['day']['maxtemp_c'] %>°C</p>
+            <p>Max Wind: <%= day['day']['maxwind_kph'] %></p>
+            <p>Humidity: <%= day['day']['avghumidity'] %>%</p>
+        </div>
+        </div>
+    <% end %>
+    </div>
+<% end %>

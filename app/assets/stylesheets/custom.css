@@ -14,7 +14,8 @@ body {
 }
 
 .form-seach {
-    form {
+   form {
+        margin-top: 5px;
         input {
             width: 100%;
             padding: 10px;
@@ -35,7 +36,7 @@ body {
         width: 100%;
         color: white;
         background: #6C757D;
-        margin-top: 20px;
+        margin: 20px 0 10px;
         padding: 10px;
         border: none;
         border-radius: 5px;
@@ -65,4 +66,37 @@ body {
     font-weight: bold;
     font-size: 25px;
     margin-top: 10px;
+}
+
+.get-more-notification, .unsubscribe {
+    font-weight: bold;
+    cursor: pointer;
+}
+.get-more-notification:hover, .unsubscribe:hover {
+    color: rgb(85, 85, 85);
+    text-decoration: underline;
+}
+.weather-subscription-form, .weather-unsubscription-form {
+    display: none;
+    margin-top: 5px;
+    input {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid rgb(105, 105, 105);
+        border-radius: 5px;
+    }
+    .btn-subscribe {
+        color: white;
+        background: #5372F0;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+    }
+    .btn-cancel-subscribe {
+        color: white;
+        background: #6C757D;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+    }
 }
