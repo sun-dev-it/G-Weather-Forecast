@@ -17,7 +17,7 @@ services:
         fromDatabase:
           name: weather_webrubyonrails
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: a9b00b7d43a54cf69e211a04baa17a8a
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
