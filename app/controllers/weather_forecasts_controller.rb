@@ -1,6 +1,6 @@
 class WeatherForecastsController < ApplicationController
     def index
-        @city = params[:city] || 'HaNoi'
+        @city = params[:city] || 'Ho Chi Minh'
         @weather = get_weather(@city)
         if @weather.present?
           # Các câu lệnh xử lý dữ liệu thời tiết ở đây

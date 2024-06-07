@@ -17,14 +17,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_06_093848) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "weather_forecasts", force: :cascade do |t|
-    t.string "city"
-    t.float "temperature"
-    t.integer "humidity"
-    t.float "wind_speed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "location"
-  end
-
 end

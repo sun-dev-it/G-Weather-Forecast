@@ -31,6 +31,9 @@ body {
             border: none;
             border-radius: 5px;
         }
+        button:hover {
+            cursor: pointer;
+        }
     }
     .Use-current-location button {
         width: 100%;
@@ -40,6 +43,9 @@ body {
         padding: 10px;
         border: none;
         border-radius: 5px;
+        button:hover {
+            cursor: pointer;
+        }
     }
 }
 
