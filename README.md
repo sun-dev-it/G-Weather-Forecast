@@ -10,6 +10,8 @@
 ```markdown
 git clone https://github.com/sun-dev-it/G-Weather-Forecast.git
 cd G-Weather-Forecast
+bundle install
+rails db:migrat
 rails server
 ```
 - Access the link [http://localhost:3000](http://localhost:3000)
