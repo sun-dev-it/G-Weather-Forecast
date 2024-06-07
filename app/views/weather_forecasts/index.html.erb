@@ -1,5 +1,11 @@
 <div class="row content">
   <div class="col-4">
+    <% if flash[:success] %>
+      <div class="alert alert-success"><%= flash[:success] %></div>
+    <% end %>
+    <% if flash[:danger] %>
+      <div class="alert alert-danger"><%= flash[:danger] %></div>
+    <% end %>
     <%= render 'weather_forecasts/form_search' %>
     <%= render 'users/index' %>
   </div>
