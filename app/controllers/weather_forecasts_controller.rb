@@ -13,17 +13,22 @@ class WeatherForecastsController < ApplicationController
     private
 
     def get_weather(city)
-        api_key = '4434526b73164a9097693313240506'
-        url = "https://api.weatherapi.com/v1/forecast.json?key=#{api_key}&q=#{city}&days=5"
-        
-        begin
-          response = HTTParty.get(url)
-          if response.success?
-              @weather_data = response.parsed_response
-          end
-        rescue StandardError => e
-          @weather_data = nil
+      api_key = '4434526b73164a9097693313240506'
+      @day = params[:day].present? ? params[:day].to_i : 5
+      url = "https://api.weatherapi.com/v1/forecast.json?key=#{api_key}&q=#{city}&days=#{@day}"
+
+      @left = params[:left].present? ? params[:left].to_i : 1
+      @right = params[:right].present? ? params[:right].to_i : 4
+
+      begin
+        response = HTTParty.get(url)
+        if response.success?
+            @weather_data = response.parsed_response
         end
+      rescue StandardError => e
+        @weather_data = nil
+      end
+
     end
 
     def get_current_location

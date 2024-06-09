@@ -58,6 +58,11 @@ body {
 }
 
 .weather-future {
+    .container-load-more{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
     div {
         padding: 15px;
         .detail {
@@ -66,6 +71,26 @@ body {
             padding: 10px;
             border-radius: 10px;
         }
+    }
+    .load-more {
+        color: white;
+        background: #5372F0;
+        padding: 5px 20px;
+        border-radius: 5px;
+    }
+    .load-more:hover {
+        text-decoration: none;
+        background: #6786ff;
+    }
+    .not-load-more {
+        color: white;
+        background: #a5a5a5;
+        padding: 5px 20px;
+        border-radius: 5px;
+    }
+    .not-load-more:hover {
+        text-decoration: none;
+        cursor: pointer;
     }
 }
 
