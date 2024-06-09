@@ -2,19 +2,6 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   #config.action_mailer.delivery_method = :letter_opener
-=begin
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:         'smtp.gmail.com',
-    port:            587,
-    domain:          'https://g-weather-forecast-8mps.onrender.com',
-    user_name:       'daiphatle123@gmail.com',
-    password:        '4575041490',
-    authentication:  'plain',
-    enable_starttls: true,
-    open_timeout:    5,
-    read_timeout:    5 }
-=end
 
   # Settings specified here will take precedence over those in config/application.rb.
 
