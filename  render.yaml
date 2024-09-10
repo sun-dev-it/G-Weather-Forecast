@@ -1,12 +1,12 @@
 databases:
-  - name: weather_webrubyonrails_g4fc
-    databaseName: weather_webrubyonrails_g4fc
-    user: weather_webrubyonrails_g4fc_user
+  - name: weather_webrubyonrails_010902
+    databaseName: weather_webrubyonrails_010902
+    user: weather_webrubyonrails_010902_user
     plan: free
 
 services:
   - type: web
-    name: weather_webrubyonrails_g4fc
+    name: weather_webrubyonrails_010902
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
@@ -15,9 +15,9 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: weather_webrubyonrails_g4fc
+          name: weather_webrubyonrails_010902
           property: connectionString
-      - key: a9b00b7d43a54cf69e211a04baa17a8a
+      - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
