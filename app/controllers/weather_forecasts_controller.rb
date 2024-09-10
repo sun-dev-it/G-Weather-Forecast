@@ -13,7 +13,7 @@ class WeatherForecastsController < ApplicationController
     private
 
     def get_weather(city)
-      api_key = '4434526b73164a9097693313240506'
+      api_key = '71c9cad7beb147d4ada142826241009'
       @day = params[:day].present? ? params[:day].to_i : 5
       url = "https://api.weatherapi.com/v1/forecast.json?key=#{api_key}&q=#{city}&days=#{@day}"
 
