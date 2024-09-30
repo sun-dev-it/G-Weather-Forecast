@@ -19,7 +19,7 @@
     </div>
 
     <div class="row weather-future">
-        <% @weather_data['forecast']['forecastday'][@left..@right].each do |day| %>
+        <% @weather_data['forecast']['forecastday'][1..@day].each do |day| %>
             <div class="col-3">
                 <div class="detail">
                     <h3><%= Date.parse(day['date']).strftime('%A, %d %b') %></h3>
@@ -34,23 +34,12 @@
         <% end %>
         
         <div class="container-load-more">
-            <% if @left > 1 %>
-                <%= link_to "Previous", weather_forecasts_path(day: @day - 1, left: @left - 1, right: @right - 1), class: "load-more" %>
-            <% else %>
-                <span class="not-load-more">Previous</span>
+            <% if @day > 5 %>
+                <%= link_to "Less", weather_forecasts_path(day: @day - 4), class: "load-more" %>
             <% end %>
-
-            <% if @right - @left > 4 %>
-                <%= link_to "Less", weather_forecasts_path(day: @day - 4, left: @left, right: @right - 4), class: "load-more" %>
-            <% end %>
-            <% if @right - @left < 11 &&  @right < 10%>
-                <%= link_to "Load More", weather_forecasts_path(day: @day + 4, left: @left, right: @right + 4), class: "load-more" %>
+            
+            <% if @day < 10 %>
+                <%= link_to "Load More", weather_forecasts_path(day: @day + 4), class: "load-more" %>
             <% end %> 
-
-            <% if @right < 13 %>
-                <%= link_to "Next", weather_forecasts_path(day: @day + 1, left: @left + 1, right: @right + 1), class: "load-more" %>
-            <% else %>
-                <span class="not-load-more">Next</span>
-            <% end %>
         </div>
 <% end %>

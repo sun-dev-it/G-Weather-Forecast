@@ -1,25 +1,22 @@
 class WeatherForecastsController < ApplicationController
     def index
-        @city = params[:city] || 'Ho Chi Minh'
-        @weather = get_weather(@city)
-        if @weather.present?
-          # Các câu lệnh xử lý dữ liệu thời tiết ở đây
-        else
-          flash[:danger] = "Failed to retrieve weather data for '#{@city}'"
-          redirect_to root_path
-        end
+      get_current_location()
+      @api_key = 'e6b57eb7e3514d26a34153934243009'
+      @city = params[:city] || get_current_location()
+      @day = params[:day].present? ? params[:day].to_i : 5
+      @weather = get_weather(@api_key, @city, @day)
+
+      if !@weather.present?
+        flash[:danger] = "Failed to retrieve weather data for '#{@city}'"
+        redirect_to root_path
+      end
     end
 
     private
 
-    def get_weather(city)
-      api_key = '71c9cad7beb147d4ada142826241009'
-      @day = params[:day].present? ? params[:day].to_i : 5
-      url = "https://api.weatherapi.com/v1/forecast.json?key=#{api_key}&q=#{city}&days=#{@day}"
-
-      @left = params[:left].present? ? params[:left].to_i : 1
-      @right = params[:right].present? ? params[:right].to_i : 4
-
+    def get_weather(api_key, city, day)
+      url = "https://api.weatherapi.com/v1/forecast.json?key=#{api_key}&q=#{city}&days=#{day}"
+      
       begin
         response = HTTParty.get(url)
         if response.success?
@@ -28,11 +25,12 @@ class WeatherForecastsController < ApplicationController
       rescue StandardError => e
         @weather_data = nil
       end
-
     end
 
-    def get_current_location
-      location = Geocoder.search(request.remote_ip).first
-      return location.city
+    def get_current_location()
+      response = Net::HTTP.get(URI('https://ipinfo.io/json'))
+      data = JSON.parse(response)
+      city = data['city']
+      return city
     end
 end
