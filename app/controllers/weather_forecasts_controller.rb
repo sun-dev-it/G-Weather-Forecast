@@ -30,7 +30,9 @@ class WeatherForecastsController < ApplicationController
     def get_current_location()
       response = Net::HTTP.get(URI('https://ipinfo.io/json'))
       data = JSON.parse(response)
-      city = data['city']
+      lat, lon = data['loc'].split(',')
+      location = Geocoder.search([lat, lon]).first
+      city = location.city
       return city
     end
 end
