@@ -5,6 +5,7 @@ ruby "3.2.1"
 
 gem 'httparty'
 gem 'geocoder'
+gem 'sinatra'
 
 gem 'gmail'
 gem 'google-api-client', '~> 0.53.0'
