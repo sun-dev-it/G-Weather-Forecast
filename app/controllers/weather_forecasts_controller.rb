@@ -7,7 +7,7 @@ class WeatherForecastsController < ApplicationController
       @weather = get_weather(@api_key, @city, @day)
 
       if !@weather.present?
-        flash[:danger] = "Failed to retrieve weather data for '#{@city}'"
+        flash[:danger] = "Failed to retrieve weather data for ' #{@city} '"
         redirect_to root_path
       end
     end
@@ -30,9 +30,7 @@ class WeatherForecastsController < ApplicationController
     def get_current_location()
       response = Net::HTTP.get(URI('https://ipinfo.io/json'))
       data = JSON.parse(response)
-      lat, lon = data['loc'].split(',')
-      location = Geocoder.search([lat, lon]).first
-      city = location.city
+      city = data['city']
       return city
     end
 end
