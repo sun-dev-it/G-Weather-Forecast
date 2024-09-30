@@ -28,7 +28,11 @@ class WeatherForecastsController < ApplicationController
     end
 
     def get_current_location()
-      client_ip = request.ip
+      client_ip = request.env['HTTP_X_FORWARDED_FOR'] || request.ip
+      if client_ip == '::1' || client_ip == '127.0.0.1'
+        client_ip = ''
+      end
+      
       response = Net::HTTP.get(URI("https://ipinfo.io/#{client_ip}/json"))
       data = JSON.parse(response)
       city = data['city']
