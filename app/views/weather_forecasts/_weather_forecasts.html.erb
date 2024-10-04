@@ -22,7 +22,7 @@
         <% @weather_data['forecast']['forecastday'][1..@day].each do |day| %>
             <div class="col-3">
                 <div class="detail">
-                    <h3><%= Date.parse(day['date']).strftime('%A, %d %b') %></h3>
+                    <h5><%= Date.parse(day['date']).strftime('%A, %d %b') %></h5>
                     <img src="<%= day['day']['condition']['icon'] %>">
                     <p>Average Temp: <%= day['day']['avgtemp_c'] %>°C</p>
                     <p>Min Temp: <%= day['day']['mintemp_c'] %>°C</p>
