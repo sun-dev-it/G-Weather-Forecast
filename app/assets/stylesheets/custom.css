@@ -15,25 +15,28 @@ body {
 
 .form-seach form {
         margin-top: 5px;
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid rgb(105, 105, 105);
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            color: white;
-            background: #5372F0;
-            margin-top: 20px;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            cursor: pointer;
-        }
 }
+.form-seach form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(105, 105, 105);
+    border-radius: 5px;
+}
+
+.form-seach form button {
+    width: 100%;
+    color: white;
+    background: #5372F0;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-seach form button:hover {
+    cursor: pointer;
+}
+
 .form-seach .Use-current-location button {
         width: 100%;
         color: white;
@@ -42,10 +45,11 @@ body {
         padding: 10px;
         border: none;
         border-radius: 5px;
-        button:hover {
-            cursor: pointer;
-            background: #878f96;
-        }
+}
+
+.form-seach .Use-current-location button button:hover {
+    cursor: pointer;
+    background: #878f96;
 }
 
 .weather-today {
@@ -55,41 +59,45 @@ body {
     border-radius: 10px;
 }
 
-.weather-future {
-    .container-load-more{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    div {
-        padding: 15px;
-        .detail {
-            color: white;
-            background: #6C757D;
-            padding: 10px;
-            border-radius: 10px;
-        }
-    }
-    .load-more {
-        color: white;
-        background: #5372F0;
-        padding: 5px 20px;
-        border-radius: 5px;
-    }
-    .load-more:hover {
-        text-decoration: none;
-        background: #6786ff;
-    }
-    .not-load-more {
-        color: white;
-        background: #a5a5a5;
-        padding: 5px 20px;
-        border-radius: 5px;
-    }
-    .not-load-more:hover {
-        text-decoration: none;
-        cursor: pointer;
-    }
+.weather-future .not-load-more:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.weather-future .container-load-more{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-future div {
+    padding: 15px;
+}
+
+.weather-future div .detail {
+    color: white;
+    background: #6C757D;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.weather-future .load-more {
+    color: white;
+    background: #5372F0;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.weather-future .load-more:hover {
+    text-decoration: none;
+    background: #6786ff;
+}
+
+.weather-future .not-load-more {
+    color: white;
+    background: #a5a5a5;
+    padding: 5px 20px;
+    border-radius: 5px;
 }
 
 .text-4-Day-Forecast {
@@ -109,32 +117,45 @@ body {
 .weather-subscription-form, .weather-unsubscription-form {
     display: none;
     margin-top: 5px;
-    input {
-        width: 100%;
-        padding: 6px;
-        border: 1px solid rgb(105, 105, 105);
-        border-radius: 5px;
-    }
-    .btn-subscribe {
-        color: white;
-        background: #5372F0;
-        margin-top: 20px;
-        border: none;
-        border-radius: 5px;
-    }
-    .btn-cancel-subscribe {
-        color: white;
-        background: #6C757D;
-        margin-top: 20px;
-        border: none;
-        border-radius: 5px;
-    }
-    .btn-subscribe:hover {
-        cursor: pointer;
-        background: #6786ff;
-    }
-    .btn-cancel-subscribe:hover {
-        cursor: pointer;
-        background: #878f96;
-    }
+}
+
+.weather-subscription-form, .weather-unsubscription-form input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid rgb(105, 105, 105);
+    border-radius: 5px;
+}
+
+.weather-subscription-form, .weather-unsubscription-form .btn-subscribe {
+    color: white;
+    background: #5372F0;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.weather-subscription-form, .weather-unsubscription-form .btn-cancel-subscribe {
+    color: white;
+    background: #6C757D;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.weather-subscription-form, .weather-unsubscription-form .btn-cancel-subscribe {
+    color: white;
+    background: #6C757D;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.weather-subscription-form, .weather-unsubscription-form .btn-subscribe:hover {
+    cursor: pointer;
+    background: #6786ff;
+}
+
+.weather-subscription-form, .weather-unsubscription-form .btn-cancel-subscribe:hover {
+    cursor: pointer;
+    background: #878f96;
 }
